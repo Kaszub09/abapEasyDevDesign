@@ -5,9 +5,10 @@
 "! Similar case can happen when you select MAX record out of many and want to join with it.
 "!
 "! In such cases, you can try to grab additional data by using select-options with key on which you group.
-"! It sometimes help and can be more performa*nt than join or FOR ALL ENTRIES
-"! It more complicated then previous examples, so you should use it only if you encounter such a problems,
-"! and verify them (e.g. run ST05, export execution plan (.plv file), and check that it truly is a problem).
+"! It sometimes help and can be more performant than join or FOR ALL ENTRIES,
+"! but code is longer than in previous examples, and may actually be slower id db is smart enough with joins,
+"! so you should use it only if you encounter slow joins.
+"! Always compare and verify (e.g. run ST05, export execution plan (.plv file), and check that it truly is a problem) if it's needed.
 "!
 "! It's hard to find particular example - in simple cases DB might be able to join before aggregation,
 "! but in more complicated, with multiple joins and columns it might not be possible
