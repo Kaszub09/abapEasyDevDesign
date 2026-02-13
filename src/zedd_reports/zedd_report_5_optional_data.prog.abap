@@ -1,6 +1,6 @@
-"! Sometimes you may find that joins with additional data are very expensive,
+"! Sometimes you may find that joins with additional data (e.g. aggregations) are very expensive,
 "! because DB will materialize them before executing join.
-"! E.g. you want to group deliveries by sales order, but when joining it will sales order table,
+"! E.g. you want to group deliveries by sales order, but when joining it with sales order table,
 "! all deliveries, whole LIPS is grouped, before join, which results in terrible performance.
 "! Similar case can happen when you select MAX record out of many and want to join with it.
 "!
