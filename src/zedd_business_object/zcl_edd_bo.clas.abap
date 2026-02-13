@@ -1,10 +1,7 @@
 "! NOTE: optimization idea - make bo_current ref, so it doesn't take space until it's actually changed.
 "! NOTE: optimization idea - make bo_db ref, so it doesn't take space for new ones.
-"!
-"!
 "! NOTE: optimization idea - cache EXT so it's only recalculated when data was changed
-"! NOTE: optimization idea - remember what fields were changed, and then validate/authorize/fill only/change
-"! only necessary data based on changed fields
+"! NOTE: optimization idea - remember what fields were changed, and then validate/authorize/fill only/change only necessary data based on changed fields
 CLASS zcl_edd_bo DEFINITION PUBLIC CREATE PRIVATE GLOBAL FRIENDS zcl_edd_bo_api.
 
   PUBLIC SECTION.
