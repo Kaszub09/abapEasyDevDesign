@@ -34,7 +34,8 @@ CLASS zcl_edd_bo DEFINITION PUBLIC CREATE PRIVATE GLOBAL FRIENDS zcl_edd_bo_api.
 
   PRIVATE SECTION.
     CONSTANTS:
-      "Statuses for caching validation/authorization
+      "Statuses for caching validation/authorization - might be useful depending on how expensive it is.
+      "In simple cases you probably don't need to cache it.
       BEGIN OF c_status,
         unknown TYPE i VALUE 0,
         ok      TYPE i VALUE 1,
@@ -143,15 +144,8 @@ CLASS zcl_edd_bo IMPLEMENTATION.
           object                  = 'ZEDD_BO'
         IMPORTING
           number                  = bo_current-bo_id
-        EXCEPTIONS
-          interval_not_found      = 1
-          number_range_not_intern = 2
-          object_not_found        = 3
-          quantity_is_0           = 4
-          quantity_is_not_1       = 5
-          interval_overflow       = 6
-          buffer_overflow         = 7
-          OTHERS                  = 8.
+        EXCEPTIONS 
+          OTHERS                  = 1.
       IF sy-subrc <> 0.
         APPEND VALUE #( error = zcl_ed_msg=>get_from_sy( ) ) TO errors.
         RETURN.
