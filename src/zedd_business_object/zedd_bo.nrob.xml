@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZEDD_BO</OBJECT>
+    <DOMLEN>ZEDD_BO_ID</DOMLEN>
+    <PERCENTAGE>95.0</PERCENTAGE>
+    <BUFFER>X</BUFFER>
+    <NOIVBUFFER>00000010</NOIVBUFFER>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>L</LANGU>
+    <OBJECT>ZEDD_BO</OBJECT>
+    <TXT>zedd_bo</TXT>
+    <TXTSHORT>zedd_bo</TXTSHORT>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

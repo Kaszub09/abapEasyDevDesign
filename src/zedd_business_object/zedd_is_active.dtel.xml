@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZEDD_IS_ACTIVE</ROLLNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DOMNAME>XFIELD</DOMNAME>
+    <LOGFLAG>X</LOGFLAG>
+    <HEADLEN>16</HEADLEN>
+    <SCRLEN2>16</SCRLEN2>
+    <SCRLEN3>16</SCRLEN3>
+    <DDTEXT>EDD BO Is active</DDTEXT>
+    <REPTEXT>EDD BO Is active</REPTEXT>
+    <SCRTEXT_M>EDD BO Is active</SCRTEXT_M>
+    <SCRTEXT_L>EDD BO Is active</SCRTEXT_L>
+    <DTELMASTER>E</DTELMASTER>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>
