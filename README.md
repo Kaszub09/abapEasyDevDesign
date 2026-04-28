@@ -8,3 +8,4 @@ Various ABAP design examples:
 - Business object - how to design business object - so that model is not tied to view, and provides ease of extensibility and maintainability.
 - Program - how to design program with multiple screens and navigation between them, with focus on avoiding global data and code scattered across multiple modules, called who knows when.
 - Buffer - how to write simple buffer to avoid unnecessary trips to database.
+- Bypass single use - how to design around single use stuff, e.g. BADI, when multiple implemntations are needed
