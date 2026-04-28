@@ -10,10 +10,8 @@
     <NOIVBUFFER>00000010</NOIVBUFFER>
    </ATTRIBUTES>
    <TEXT>
-    <LANGU>L</LANGU>
+    <LANGU>E</LANGU>
     <OBJECT>ZEDD_BO</OBJECT>
-    <TXT>zedd_bo</TXT>
-    <TXTSHORT>zedd_bo</TXTSHORT>
    </TEXT>
   </asx:values>
  </asx:abap>

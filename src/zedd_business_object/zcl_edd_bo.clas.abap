@@ -1,7 +1,10 @@
+"! Start with ZIF_EDD_BO.
+"!
 "! NOTE: optimization idea - make bo_current ref, so it doesn't take space until it's actually changed.
 "! NOTE: optimization idea - make bo_db ref, so it doesn't take space for new ones.
 "! NOTE: optimization idea - cache EXT so it's only recalculated when data was changed
-"! NOTE: optimization idea - remember what fields were changed, and then validate/authorize/fill only/change only necessary data based on changed fields
+"! NOTE: optimization idea - remember what fields were changed, and then validate/authorize/fill/change
+"! only necessary data based on changed fields
 CLASS zcl_edd_bo DEFINITION PUBLIC CREATE PRIVATE GLOBAL FRIENDS zcl_edd_bo_api.
 
   PUBLIC SECTION.
@@ -34,8 +37,7 @@ CLASS zcl_edd_bo DEFINITION PUBLIC CREATE PRIVATE GLOBAL FRIENDS zcl_edd_bo_api.
 
   PRIVATE SECTION.
     CONSTANTS:
-      "Statuses for caching validation/authorization - might be useful depending on how expensive it is.
-      "In simple cases you probably don't need to cache it.
+      "Statuses for caching validation/authorization
       BEGIN OF c_status,
         unknown TYPE i VALUE 0,
         ok      TYPE i VALUE 1,
@@ -144,8 +146,15 @@ CLASS zcl_edd_bo IMPLEMENTATION.
           object                  = 'ZEDD_BO'
         IMPORTING
           number                  = bo_current-bo_id
-        EXCEPTIONS 
-          OTHERS                  = 1.
+        EXCEPTIONS
+          interval_not_found      = 1
+          number_range_not_intern = 2
+          object_not_found        = 3
+          quantity_is_0           = 4
+          quantity_is_not_1       = 5
+          interval_overflow       = 6
+          buffer_overflow         = 7
+          OTHERS                  = 8.
       IF sy-subrc <> 0.
         APPEND VALUE #( error = zcl_ed_msg=>get_from_sy( ) ) TO errors.
         RETURN.

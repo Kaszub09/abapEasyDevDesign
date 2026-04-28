@@ -1,14 +1,13 @@
-"! Sometimes you may find that joins with additional data (e.g. aggregations) are very expensive,
+"! Sometimes you may find that joins with additional data are very expensive,
 "! because DB will materialize them before executing join.
-"! E.g. you want to group deliveries by sales order, but when joining it with sales order table,
+"! E.g. you want to group deliveries by sales order, but when joining it will sales order table,
 "! all deliveries, whole LIPS is grouped, before join, which results in terrible performance.
 "! Similar case can happen when you select MAX record out of many and want to join with it.
 "!
 "! In such cases, you can try to grab additional data by using select-options with key on which you group.
-"! It sometimes help and can be more performant than join or FOR ALL ENTRIES,
-"! but code is longer than in previous examples, and may actually be slower id db is smart enough with joins,
-"! so you should use it only if you encounter slow joins.
-"! Always compare and verify (e.g. run ST05, export execution plan (.plv file), and check that it truly is a problem) if it's needed.
+"! It sometimes help and can be more performa*nt than join or FOR ALL ENTRIES
+"! It more complicated then previous examples, so you should use it only if you encounter such a problems,
+"! and verify them (e.g. run ST05, export execution plan (.plv file), and check that it truly is a problem).
 "!
 "! It's hard to find particular example - in simple cases DB might be able to join before aggregation,
 "! but in more complicated, with multiple joins and columns it might not be possible
